@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resolver Ecuación con Animación</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #dff3ff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    #ecuacion-input {
+      font-size: 24px;
+      margin: 20px auto;
+    }
+    #ecuacion-input input {
+      font-size: 24px;
+      width: 150px;
+      text-align: center;
+    }
+    #game {
+      position: relative;
+      height: 400px;
+      margin-top: 30px;
+    }
+    .block-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .block {
+      width: 40px;
+      height: 40px;
+      background: #00c0ff;
+      margin: 4px;
+      border-radius: 6px;
+      transition: transform 0.3s;
+    }
+    #btnAgregar, #btnResolver {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 22px;
+    }
+    #penguin {
+      position: absolute;
+      top: 100px;
+      left: -60px;
+      width: 60px;
+      transition: left 2s linear;
+    }
+    .pillar {
+      position: absolute;
+      bottom: 0;
+      width: 40px;
+      background: #00c0ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Resolver ecuación</h1>
+
+  <div id="ecuacion-input">
+    <label for="ecuacion">Ecuación: </label>
+    <input type="text" id="ecuacion" placeholder="Ej. 6a = 12">
+  </div>
+
+  <div id="game">
+    <img id="penguin" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Walking_penguin.gif" alt="Pingüino" />
+    <div class="pillar" style="height: 240px; left: 300px;"></div>
+    <div class="pillar" style="height: 240px; left: 500px;"></div>
+  </div>
+
+  <div>
+    <button id="btnAgregar">Agregar Cuadrado</button>
+    <button id="btnResolver">Resolver</button>
+  </div>
+
+  <div class="block-container" id="bloques"></div>
+
+  <div id="resultado"></div>
+
+  <script>
+    const bloquesContainer = document.getElementById("bloques");
+    let cantidad = 0;
+
+    document.getElementById("btnAgregar").addEventListener("click", () => {
+      const block = document.createElement("div");
+      block.className = "block";
+      bloquesContainer.appendChild(block);
+      cantidad++;
+    });
+
+    document.getElementById("btnResolver").addEventListener("click", () => {
+      const eq = document.getElementById("ecuacion").value.trim();
+      const resultadoDiv = document.getElementById("resultado");
+
+      const match = eq.match(/(\d+)\s*([a-zA-Z])\s*=\s*(\d+)/);
+      if (!match) {
+        resultadoDiv.textContent = "⚠️ Escribe una ecuación válida, por ejemplo: 6a = 12";
+        return;
+      }
+
+      const coef = parseInt(match[1]);
+      const valor = parseInt(match[3]);
+      const esperado = valor / coef;
+
+      if (cantidad === valor) {
+        resultadoDiv.innerHTML = `✅ ¡Correcto! <strong>${match[2]} = ${esperado}</strong>`;
+        moverPinguino();
+      } else {
+        resultadoDiv.innerHTML = `❌ Incorrecto. Prueba con ${valor} bloques.`;
+      }
+    });
+
+    function moverPinguino() {
+      const pinguino = document.getElementById("penguin");
+      pinguino.style.left = "300px";
+      setTimeout(() => {
+        pinguino.style.left = "500px";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
