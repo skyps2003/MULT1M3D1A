@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PandaMath</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="icon" href="/static/imagenes/panda.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <nav>
+      <div class="logo">🐼 PandaMath</div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#niveles">Niveles ▾</a>
+          <ul class="submenu">
+            <li><a href="/nivel1">Nivel 1</a></li>
+            <li><a href="/nivel2">Nivel 2</a></li>
+            <li><a href="/nivel3">Nivel 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#creadores">Creadores</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Pantalla de carga -->
+  <div id="loading-screen">
+    <img src="../static/imagenes/POO.png" alt="Poo el Panda" id="panda-loading">
+    <p>Cargando el juego...</p>
+  </div>
+
+<!-- Sección de inicio -->
+<section id="inicio" class="inicio-section">
+  <div class="inicio-content" id="inicioContent">
+    <h1>🎮 Bienvenido a PandaMath</h1>
+    <p>
+      Aprende a resolver ecuaciones de uno y dos pasos con ayuda de Poo, el panda matemático.<br>
+      ¡Juega, experimenta y mejora tus habilidades con bloques que se estiran, se dividen y se multiplican!
+    </p>
+    <button class="btn-empezar" id="btnEmpezar">¡Empezar a Jugar!</button>
+  </div>
+  <div class="como-jugar" id="comoJugar" style="display:none;">
+    <h2>¿Cómo se juega?</h2>
+    <ul>
+      <li>👆 Elige el nivel y lee la ecuación que aparece en pantalla.</li>
+      <li>🧩 Usa los bloques para sumar, restar, multiplicar o dividir y resolver la ecuación.</li>
+      <li>🐼 Si necesitas ayuda, Poo el panda te dará pistas divertidas.</li>
+      <li>🏆 ¡Resuelve todas las ecuaciones y gana medallas!</li>
+    </ul>
+   
+    <button class="btn-empezar" id="btnJugar" style="margin-top:20px;">¡Ahora sí, jugar!</button>  </div>
+</section>
+
+  <!-- Pie de página -->
+  <footer id="creadores">
+    <p>&copy; 2025 PandaMath - Desarrollado en Desarrollo de Aplicaciones Multimedia 🐼💻</p>
+  </footer>
+
+  <script src="../static/scripts/script.js"></script>
+</body>

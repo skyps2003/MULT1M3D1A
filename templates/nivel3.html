@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PandaMath - Nivel 03</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="/static/imagenes/panda.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+    <body>
+  <header>
+    <nav>
+      <div class="logo">🐼 PandaMath</div>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="#niveles">Niveles ▾</a>
+          <ul class="submenu">
+            <li><a href="/nivel1">Nivel 1</a></li>
+            <li><a href="/nivel2">Nivel 2</a></li>
+            <li><a href="/nivel3">Nivel 3</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#creadores">Creadores</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+     <!-- Agrega esto en tu HTML donde quieras los cuadros -->
+<div class="ecuacion-grande" id="ecuacion"></div>
+<div class="resuelve-cuadros">
+  <span class="variable">a =</span>
+  <div class="cuadros" id="cuadros"></div>
+</div>
+<div class="nivel-bar">
+  <button class="btn-nivel" onclick="verificarCuadros()" title="Verificar">
+    <i class="fa-solid fa-play"></i>
+  </button>
+  <span class="nivel1">Nivel 3</span>
+</div>
+
+<canvas id="canvasAnim" width="900" height="350" style="display:block;margin:30px auto 0 auto;background:#e0f7fa;border-radius:20px;"></canvas>
+<div id="feedback-nivel" class="feedback-nivel"></div>
+  </main>
+  <footer id="creadores">
+    <p>&copy; 2025 PandaMath - Desarrollado en Desarrollo de Aplicaciones Multimedia 🐼💻</p>
+  </footer>
+
+</body>
+</html>
