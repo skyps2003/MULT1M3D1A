@@ -87,7 +87,7 @@ const rightX = 500;
 
   // Panda
   const pandaImg = new Image();
-  pandaImg.src = "../static/imagenes/POO.png";
+  pandaImg.src = "/static/imagenes/POO.png";
   let pandaX = leftX + blockW / 2;
   let pandaY = 0;
   let pandaCruza = false;
