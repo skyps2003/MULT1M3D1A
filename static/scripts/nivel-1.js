@@ -341,7 +341,7 @@ function animarResolucion(n, aSel, resultado, correcto) {
   const pandaImg = new Image();
   pandaImg.src = "/static/imagenes/POO.png";
   const pandaSadImg = new Image();
-  pandaSadImg.src = "/static/imagenes/POO_triste.png";
+  pandaSadImg.src = "/static/imagenes/poo_triste.png";
   let pandaX = leftX + blockW / 2;
   let pandaY = 0;
   let pandaCruza = false;
