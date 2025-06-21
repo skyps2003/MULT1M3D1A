@@ -152,8 +152,57 @@ nav {
   content: '';
   margin-left: 6px;
 }
+/**************************/
+/* Responsive NAVBAR para móvil */
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+    max-width: 100vw;
+  }
+  .logo {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-links a {
+    font-size: 1em;
+    padding: 8px 0;
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
+  .nav-links .submenu {
+    min-width: 120px;
+    left: 10px;
+    border-radius: 18px;
+    font-size: 0.98em;
+  }
+}
 
-
+/* Mejoras para pantallas muy pequeñas */
+@media (max-width: 400px) {
+  nav {
+    padding: 0 2px;
+  }
+  .logo {
+    font-size: 1em;
+  }
+  .nav-links a {
+    font-size: 0.95em;
+    padding: 6px 0;
+  }
+}
+/***************************************/
 #loading-screen {
   display: flex;
   flex-direction: column;
@@ -346,7 +395,55 @@ nav {
   0% { box-shadow: 0 0 0 0 #ffb88c66; }
   100% { box-shadow: 0 0 16px 8px #ffb88c33; }
 }
+/*************************************/
+/* Responsive para sección de inicio y botón principal */
+@media (max-width: 700px) {
+  .inicio-section {
+    min-height: 80vh;
+    padding: 0 4vw;
+    align-items: flex-start;
+  }
+  .inicio-content {
+    padding: 18px 6px;
+    max-width: 99vw;
+    margin: 18px auto;
+  }
+  .inicio-content h1 {
+    font-size: 1.5em;
+    margin-bottom: 12px;
+  }
+  .inicio-content p {
+    font-size: 1em;
+    margin-bottom: 18px;
+  }
+  .btn-empezar {
+    padding: 12px 18px;
+    font-size: 1em;
+  }
+  .explicacion-juego {
+    padding: 10px 6px;
+    font-size: 0.98em;
+  }
+}
 
+@media (max-width: 400px) {
+  .inicio-section {
+    min-height: 90vh;
+    padding: 0 2vw;
+  }
+  .inicio-content {
+    padding: 8px 2px;
+    font-size: 0.95em;
+  }
+  .btn-empezar {
+    padding: 8px 8px;
+    font-size: 0.95em;
+  }
+  .explicacion-juego {
+    padding: 6px 2px;
+    font-size: 0.93em;
+  }
+}
 /*****************************/
 
 .nivel-section {
@@ -471,18 +568,7 @@ nav {
   animation: fadeIn 0.8s;
 }
 
-/* Footer */
-footer {
-  background: var(--color-blanco);
-  color: var(--color-texto);
-  text-align: center;
-  padding: 18px 0;
-  font-size: 1.1em;
-  border-top: 2px solid var(--color-secundario);
-  margin-top: 40px;
-  letter-spacing: 1px;
-  box-shadow: 0 -2px 8px #ffb88c40;
-}
+
 /******************************************/
 .ecuacion-grande {
   text-align: center;
@@ -626,11 +712,17 @@ footer {
   text-align: center;
 }
 /******************************************/
-/* Responsive */
+/* Responsive para sección de nivel y controles */
 @media (max-width: 700px) {
-  .inicio-content, .nivel-content {
-    padding: 30px 10px;
-    max-width: 95vw;
+  .nivel-section {
+    min-height: 80vh;
+    padding: 0 4vw;
+    align-items: flex-start;
+  }
+  .nivel-content {
+    padding: 18px 6px;
+    max-width: 99vw;
+    margin: 18px auto;
   }
   .ecuacion-animada {
     font-size: 1.2em;
@@ -639,5 +731,162 @@ footer {
   .controles-nivel {
     flex-direction: column;
     gap: 8px;
+  }
+  .bloque {
+    padding: 7px 12px;
+    font-size: 0.95em;
+  }
+  .variable {
+    font-size: 1.1em;
+    padding: 4px 8px;
+    margin-right: 4px;
+  }
+  .cuadro {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1em;
+  }
+  .btn-nivel {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    border-radius: 12px;
+  }
+  .nivel1 {
+    font-size: 1.05rem;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .nivel-section {
+    min-height: 90vh;
+    padding: 0 2vw;
+  }
+  .nivel-content {
+    padding: 8px 2px;
+    font-size: 0.95em;
+  }
+  .ecuacion-animada {
+    font-size: 1em;
+    gap: 4px;
+  }
+  .bloque {
+    padding: 4px 6px;
+    font-size: 0.9em;
+  }
+  .variable {
+    font-size: 0.95em;
+    padding: 2px 4px;
+    margin-right: 2px;
+  }
+  .cuadro {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9em;
+  }
+  .btn-nivel {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+  .nivel1 {
+    font-size: 0.95rem;
+  }
+}
+/******************************************/
+
+/* Footer */
+footer {
+  background: var(--color-blanco);
+  color: var(--color-texto);
+  text-align: center;
+  padding: 18px 0;
+  font-size: 1.1em;
+  border-top: 2px solid var(--color-secundario);
+  margin-top: 40px;
+  letter-spacing: 1px;
+  box-shadow: 0 -2px 8px #ffb88c40;
+}
+/********************************************
+/* Footer SIEMPRE abajo usando flexbox en body/html */
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/***********************************/
+footer {
+  background: var(--color-blanco);
+  color: var(--color-texto);
+  text-align: center;
+  padding: 18px 0;
+  font-size: 1.1em;
+  border-top: 2px solid var(--color-secundario);
+  margin-top: auto;
+  letter-spacing: 1px;
+  box-shadow: 0 -2px 8px #ffb88c40;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+@media (max-width: 700px) {
+  footer {
+    font-size: 1em;
+    padding: 12px 0;
+  }
+}
+@media (max-width: 400px) {
+  footer {
+    font-size: 0.95em;
+    padding: 8px 0;
+  }
+}
+/* Responsive: el contenido crece y el footer nunca tapa nada */
+.inicio-section,
+.nivel-section {
+  flex: 1 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ya tienes media queries para .nivel-section y .inicio-section, ¡bien! */
+/* Si tienes más secciones principales, agrégales flex: 1 0 auto; también */
+
+@media (max-width: 700px) {
+  .nivel-section {
+    min-height: 80vh;
+    padding: 0 4vw;
+    align-items: center;      /* <--- centra verticalmente */
+    justify-content: center;  /* <--- centra horizontalmente */
+    flex-direction: column;   /* <--- apila el contenido */
+  }
+  .nivel-content {
+    margin: 18px auto;
+    padding: 18px 6px;
+    max-width: 99vw;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;      /* <--- centra el contenido interno */
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  .nivel-section {
+    min-height: 90vh;
+    padding: 0 2vw;
+  }
+  .nivel-content {
+    padding: 8px 2px;
+    font-size: 0.95em;
   }
 }
